@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app='movieApp'>
+
+<head>
+    <meta charset="utf-8">
+    <title>Angular Movie Lab</title>
+
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0-rc.2/angular.js'></script>
+    <script type="text/javascript" src='app.js'></script>
+</head>
+
+<body>
+    <div ng-controller='MovieCtrl as movies'>
+        <ng-pluralize count="movies.moviesToWatch.length" when="{
+        '0': 'No movies.',
+        '1': 'One movie is avalible to viewers.',
+        'other': '{} movies are avalible to viewers.'}">
+        </ng-pluralize>
+        <br>
+        <ul>
+            <li ng-repeat="movie in movies.moviesToWatch | orderBy: '-title' | limitTo: 5">
+
+                {{movie.title}}
+                {{movie.length}}
+                <div ng-Pluralize='moviesToWatch'>
+                    "`{{moviesToWatch.length}}` movies to watch"
+                </div>
+                <hr>
+            </li>
+        </ul>
+
+
+      <form ng-submit="movies.submit(newMovie)" >
+        Enter text and hit enter:
+        <input type="text" ng-model="newMovie" name="text" />
+        <input type="submit" id="submit" value="Add" />
+        <pre>list={{text}}</pre>
+      </form>
+    </div>
+</body>
+
+</html>
