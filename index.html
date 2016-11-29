@@ -19,9 +19,9 @@
         <br>
         <ul>
             <li ng-repeat="movie in movies.moviesToWatch | orderBy: '-title' | limitTo: limit">
-
                 {{movie.title}}
                 {{movie.length}}
+                <span ng-click = 'movies.deleteMovie(movie)'><img src="trash.png" width="30px" height="30px" style="float:right"/></span>
                 <div ng-Pluralize='moviesToWatch'>
                     "`{{moviesToWatch.length}}` movies to watch"
                 </div>

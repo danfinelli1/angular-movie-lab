@@ -34,5 +34,10 @@ function MovieCtrl(){
       vm.moviesToWatch.push({title: movieTitle});
 
   }
+  vm.deleteMovie = function(movieTitle){
+    console.log(movieTitle);
+    var index = vm.moviesToWatch.indexOf(movieTitle);
+    vm.moviesToWatch.splice(index, 1);
 
+  }
 }
