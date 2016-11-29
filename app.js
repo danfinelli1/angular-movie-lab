@@ -34,4 +34,5 @@ function MovieCtrl(){
       vm.moviesToWatch.push({title: movieTitle});
 
   }
+
 }

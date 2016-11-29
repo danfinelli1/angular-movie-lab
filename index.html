@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div ng-controller='MovieCtrl as movies'>
+    <div ng-controller='MovieCtrl as movies' ng-init = 'limit = 5' >
         <ng-pluralize count="movies.moviesToWatch.length" when="{
         '0': 'No movies.',
         '1': 'One movie is avalible to viewers.',
@@ -18,7 +18,7 @@
         </ng-pluralize>
         <br>
         <ul>
-            <li ng-repeat="movie in movies.moviesToWatch | orderBy: '-title' | limitTo: 5">
+            <li ng-repeat="movie in movies.moviesToWatch | orderBy: '-title' | limitTo: limit">
 
                 {{movie.title}}
                 {{movie.length}}
@@ -34,6 +34,7 @@
         Enter text and hit enter:
         <input type="text" ng-model="newMovie" name="text" />
         <input type="submit" id="submit" value="Add" />
+        <button ng-click = 'limit = movies.moviesToWatch.length' type="button" name="button">Show More</button>
         <pre>list={{text}}</pre>
       </form>
     </div>
