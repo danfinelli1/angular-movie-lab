@@ -38,6 +38,11 @@ function MovieCtrl(){
     console.log(movieTitle);
     var index = vm.moviesToWatch.indexOf(movieTitle);
     vm.moviesToWatch.splice(index, 1);
-
   }
-}
+  vm.watchedMovie = function(movieTitle){
+    console.log('strike');
+    var index = vm.moviesToWatch.indexOf(movieTitle);
+     moviesToWatch[index].className = 'strike';
+
+      }
+    }

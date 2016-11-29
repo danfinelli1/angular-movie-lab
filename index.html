@@ -22,6 +22,7 @@
                 {{movie.title}}
                 {{movie.length}}
                 <span ng-click = 'movies.deleteMovie(movie)'><img src="trash.png" width="30px" height="30px" style="float:right"/></span>
+                <span ng-click = 'movies.watchedMovie(movie)'><img src="eye.png" width="30px" height="30px" style="float:right"/></span>
                 <div ng-Pluralize='moviesToWatch'>
                     "`{{moviesToWatch.length}}` movies to watch"
                 </div>
@@ -35,7 +36,6 @@
         <input type="text" ng-model="newMovie" name="text" />
         <input type="submit" id="submit" value="Add" />
         <button ng-click = 'limit = movies.moviesToWatch.length' type="button" name="button">Show More</button>
-        <pre>list={{text}}</pre>
       </form>
     </div>
 </body>
